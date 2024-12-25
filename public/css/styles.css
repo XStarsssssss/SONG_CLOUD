@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #09090c;
+    overflow-x: hidden;
+    height: 100vh;
+    background-attachment: fixed;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fbf9f9;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #ff4b2b;
+  }
+  
+  .hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(255, 76, 104, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 76, 104, 1);
+    }
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color:#1a1a2e ; /*#FF4191 #1a1a2e*/
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px #0fc7d1;
+  }
+  
+  .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://c4.wallpaperflare.com/wallpaper/757/235/802/music-background-dark-vinyl-wallpaper-preview.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e3dede;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  .hero-content {
+    animation: fadeInUp 2s ease-in-out;
+  }
+  
+  .hero-content h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  .hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .btn-cta {
+    background-color: #f00323;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 2.5s ease;
+    color: #fff;
+  }
+  
+  .btn-cta:hover {
+    background-color: #f70e0e;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    animation: glow 1s ease infinite;
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(255, 0, 0, 0.7), 0 0 10px rgba(255, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.5);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  
+  .features {
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/736x/aa/4b/b7/aa4bb74b694a0e8a8f310d8f20f0c835.jpg') no-repeat center center/cover;
+  
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #3b3838;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease forwards;
+    letter-spacing: 1.5px;
+    color: #f4f1f1;
+    
+  }
+  
+  .feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .feature-card {
+    background-color: #4c4d49;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  
+  .feature-card:nth-child(1) {
+    animation: fadeInUp 1.8s ease forwards;
+  }
+  
+  .feature-card:nth-child(2) {
+    animation: fadeInUp 2s ease forwards;
+  }
+  
+  .feature-card:nth-child(3) {
+    animation: fadeInUp 2.2s ease forwards;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: #fff;
+  }
+  
+  .about {
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://wallpapercave.com/wp/wp2130046.jpg') no-repeat center center/cover;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.8s ease forwards;
+  }
+  
+  .about h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #dfdfe2;
+  }
+  
+  .about p {
+    font-size: 20px;
+    color: #f4ebeb;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .space {
+    background-color: #1a1a2e;
+    padding: 30px;
+    animation: fadeInUp 2s ease forwards;
+  }
+  
+  .footer {
+    background-color: #1a1a2e;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+  }
+  
+  .footer a {
+    color: #ff4c68;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .signup {
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://e1.pxfuel.com/desktop-wallpaper/873/829/desktop-wallpaper-43-happy-music-day-instrument-best-music-day.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+  }
+  
+  .signup-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+    animation: slideInUp 1.5s ease forwards;
+  }
+  
+  .signup h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(45deg, #4450bd, #ff2bb5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .signup p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+    opacity: 0.8;
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input-field {
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    background-color: rgba(220, 220, 220, 0.9);
+    color: #3a2f82;
+    outline: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .input-field:focus {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-signup-form {
+    padding: 15px 0;
+    background: -webkit-linear-gradient(45deg, #4450bd, #ff2bb5);
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(43, 5, 210, 0.5);
+    transition: all 0.4s ease;
+    transform: translateY(0);
+  }
+  
+  .btn-signup-form:hover {
+    background: -webkit-linear-gradient(45deg, #1589d6, #ff2bb5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(7, 42, 238, 0.7);
+  }
+  
+  .signup-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #f0f0f0;
+  }
+  
+  .signup-footer a {
+    color: #ff4b2b;
+    text-decoration: none;
+  }
+  
+  .signup-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  @keyframes slideInUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  
+  
+  
+  

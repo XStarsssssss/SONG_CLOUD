@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('partials/head') %>
+</head>
+<body>
+  <nav class="navbar_lobby">
+    <a href="/" class="logo">Song Cloud</a>
+    <ul class="nav-links">
+    </ul>
+  
+
+    <section class="search-bar">
+      <input type="text" id="search" placeholder="Search Music...">
+  </section>
+
+    <a href="/fav" class="fav-btn">
+        <span class="fav-icon"></span> Favorites
+    </a>
+  </nav>
+  <section class="trend-section">
+    <h2>Legendary Artist</h2>
+    <div class="carousel">
+      <button class="scroll-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+        <% songs.forEach(song => { %>
+        <div class="image-container" id="imageContainer">
+          <a id="artist-link" href="/artist-details/<%= song.artist %>">
+            <div  class="singer" >
+              <img src="../image/<%= song.artist_image %>" alt="<%= song.song_name %>">
+            </div>
+        <h4><%= song.artist %></h4>
+      </a> 
+        </div>
+        <% }) %>
+        
+        <button class="scroll-btn right" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+  </section>
+  
+
+<br>
+<hr>
+
+
+<section class="trend-section1">
+  <h2>Popular Song</h2>
+  <div class="carousel1">
+    <button class="scroll-btn left" onclick="scrollCarousel1(-1)">&#10094;</button>
+    <% songs.forEach(song => { %>
+    <div class="image-container" id="imageContainer1">
+      <a href="/Nay_Yrr_Time_Mrr_Detail">
+      <div  class="image"><img src="../image/<%= song.cover_image %>" alt="Image description" ></div>
+      <h4><%= song.song_name %></h4>
+      </a>
+    </div>
+    <% }) %>
+    <button class="scroll-btn right" onclick="scrollCarousel1(1)">&#10095;</button>
+  </div>
+</section>
+<hr>
+<div class="highlight-section"> 
+  <div class="highlight">
+      <a href="/Sway_Tal">
+          <div class="image">
+              <img src="../image/anime_sayytal.jpg" alt="နေရာတိုင်းမှာ" />
+          </div>
+      </a>
+      <div class="song-details">
+          <p class="song-name">ဆွေးတယ်</p>
+          <p class="artist">ထူးအိမ့်သင်</p>
+      </div>
+          <div class="audio">
+          <audio controls>
+            <source src="../audio/sayytal.mp3" type="audio/mpeg">
+            Your browser does not support the audio element. 
+        </audio>
+  </div>
+  <div class="heart">
+    <button class="favorite_heart-btn" onclick="toggleFavorite(this)">
+      &#x2661;
+  </div>
+      </div>
+  </div>
+</div>
+<hr>
+<div class="highlight-section"> 
+  <div class="highlight">
+      <a href="/Cxi_Tuu_Latt_Saung">
+          <div class="image">
+              <img src="../image/anime_cxitulattsaung.jpg" alt="နေရာတိုင်းမှာ" />
+          </div>
+      </a>
+      <div class="song-details">
+          <p class="song-name">ချစ်သူလက်ဆောင်</p>
+          <p class="artist">ထူးအိမ့်သင်</p>
+      </div>
+          <div class="audio">
+          <audio controls>
+            <source src="../audio/cxituulatsaung.mp3" type="audio/mpeg">
+            Your browser does not support the audio element. 
+        </audio>
+  </div>
+  <div class="heart">
+    <button class="favorite_heart-btn" onclick="toggleFavorite(this)">
+      &#x2661;
+  </div>
+      </div>
+  </div>
+</div>
+<hr>
+  <div class="highlight-section"> 
+    <div class="highlight">
+        <a href="/Sway_Tal">
+            <div class="image">
+                <img src="../image/space_kyal.webp" alt="နေရာတိုင်းမှာ" />
+            </div>
+        </a>
+        <div class="song-details">
+            <p class="song-name">ကြယ်တွေစုံတဲ့ည</p>
+            <p class="artist">ထူးအိမ့်သင်</p>
+        </div>
+            <div class="audio">
+            <audio controls>
+              <source src="../audio/kyaltwalsonetatnya.mp3" type="audio/mpeg">
+              Your browser does not support the audio element. 
+          </audio>
+    </div>
+    <div class="heart">
+      <button class="favorite_heart-btn" onclick="toggleFavorite(this)">
+        &#x2661;
+    </div>
+        </div>
+    </div>
+  </div>
+  <hr>
+<div class="highlight-section"> 
+  <div class="highlight">
+      <a href="/Bar_Lo_Lo">
+          <div class="image">
+              <img src="../image/anime_brlolo.avif" alt="နေရာတိုင်းမှာ" />
+          </div>
+      </a>
+      <div class="song-details">
+          <p class="song-name">ဘာလိုလို</p>
+          <p class="artist">ဇော်ဝင်းထွဠ်</p>
+      </div>
+          <div class="audio">
+          <audio controls>
+            <source src="../audio/Barlolo.mp3" type="audio/mpeg">
+            Your browser does not support the audio element. 
+        </audio>
+  </div>
+  <div class="heart">
+    <button class="favorite_heart-btn" onclick="toggleFavorite(this)">
+      &#x2661;
+  </div>
+      </div>
+  </div>
+</div>
+<hr>
+<div class="highlight-section"> 
+  <div class="highlight">
+      <a href="/Leg_Tee">
+          <div class="image">
+              <img src="../image/anime_lattte.jpg" alt="နေရာတိုင်းမှာ" />
+          </div>
+      </a>
+      <div class="song-details">
+          <p class="song-name">လက်တီး</p>
+          <p class="artist">ဘိုဖြူ</p>
+      </div>
+          <div class="audio">
+          <audio controls>
+            <source src="../audio/latttee.mp3" type="audio/mpeg">
+            Your browser does not support the audio element. 
+        </audio>
+  </div>
+  <div class="heart">
+    <button class="favorite_heart-btn" onclick="toggleFavorite(this)">
+      &#x2661;
+  </div>
+      </div>
+  </div>
+</div>
+
+  <footer class="footer">
+    <p>&copy; 2024 Song Cloud | Created by X-Star</p>
+  </footer>
+  <script src="../JavaScript/script.js"></script>
+</body>
+</html>

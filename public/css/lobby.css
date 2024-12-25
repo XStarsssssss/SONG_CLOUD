@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #0f0f0f;
+    color: #e0e0e0;
+    overflow-x: hidden;
+
+  }
+  
+  .navbar_lobby {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    padding: 15px 20px; /* Consistent padding */
+    background-color: #1a1a2e; /* Dark blue color */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    animation: slideIn 0.5s ease-in-out; /* Adjust animation duration */
+    transition: background-color 0.3s ease; /* Smooth background transitions */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%); /* Start off-screen */
+    }
+    to {
+        transform: translateY(0); /* Slide into place */
+    }
+}
+
+/* Optional: Change background color on scroll */
+.navbar_lobby.scrolled {
+    background-color: #12122b; /* Slightly darker color */
+}
+
+  .home-btn,.fav-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    background-color: #f3200d; 
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(153, 168, 189, 0.4);
+  }
+  
+  .home-icon,.fav-icon  {
+    font-size: 18px;
+  }
+  
+  .home-btn:hover,.fav-btn:hover  {
+    background-color: #de280d; 
+    box-shadow: 0 6px 18px rgba(242, 55, 14, 0.6);
+    transform: translateY(-3px);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  
+  
+  .search-bar input[type="text"] {
+    width: 220px; 
+    padding: 10px 15px; 
+    border-radius: 20px; 
+    
+    background-color: #333; 
+    color: #e0e0e0; 
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease; 
+  }
+  
+  .search-bar input[type="text"]::placeholder {
+    color: #aaa; 
+    font-size: 14px; 
+  }
+  
+  .search-bar input[type="text"]:focus {
+    background-color: #444; 
+    border-color: #888; 
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  
+
+  .fav-btn {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .trend-section {
+    padding: 120px 40px 0px;
+    text-align: center;
+  }
+  .trend-section1 {
+    padding: 80px 20px 0px;
+    text-align: center;
+  }
+  
+   h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #f8f403;
+  }
+
+  .carousel ,.carousel1,.carousel2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .image-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    max-width: 100%;
+    padding: 20px;
+}
+  .image-container::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  .image{
+    min-width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: #444;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .singer{
+    min-width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: #444;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .image-container::-webkit-scrollbar {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 218, 121, 0.5);
+  }
+  .image-container .image img {
+    width: 100%;                
+    height: 100%;               
+    object-fit: cover;          
+    border-radius: 10px;       
+}
+img:hover {
+  box-shadow: 0 0 20px 1px rgba(194, 195, 195, 0.5);
+}
+.singer img{
+  width: 100%;                
+    height: 100%;               
+    object-fit: cover;          
+    border-radius: 100px; 
+}
+  
+  .scroll-btn {
+    background-color: #444;
+    border: none;
+    color: #cd4536;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+  
+  .scroll-btn {
+    background-color: #000000;
+  }
+  .highlight {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+  }
+  
+  .highlight .image{
+    min-width: 100px;
+    height: 100px;
+    background-color: #333; 
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 10px;
+    margin: 30px;
+    
+  }
+  .highlight .image:hover {
+    background-color: #555;         
+    transform: translateY(-5px);   
+  }
+  
+  .song-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+  }
+  
+  .song-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f0a500;
+    margin: 0; 
+  }
+  
+  .artist {
+    font-size: 14px;
+    color: #cccccc;
+    margin: 0; 
+  }
+  
+  
+  .song-details .extra-info {
+      font-size: 14px;
+      color: #962323;
+  }
+  
+  
+  .footer {
+    background-color: #23232a;
+    text-align: center;
+    padding: 15px 30px;
+    color: #e0e0e0;
+    font-size: 14px;
+    margin-top: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image img {
+    width: 150px;               
+    height: 100px;              
+    border-radius: 10px;        
+    object-fit: cover;  
+  }   
+
+  .profile-container {
+    width: 100%;
+    margin: 100px auto;
+    background-color: #000000;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+.favorite_heart-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #888888;       
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;     
+}
+
+.favorite_heart-btn:hover {
+  color: #ff0404;       
+  transform: scale(1.1);
+}
+
+.favorite_heart-btn.active {
+  color: #f20000;        
+}
+
