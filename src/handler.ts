@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
-import {GetAllSongs, GetId1Songs } from './DataBase/dao/song';
+import {GetAllSongs } from './DataBase/dao/song';
 import { AddFavorite,GetAllFavorites } from './DataBase/dao/favorite';
 
  export const homepageGetHandler = (_: Request, res: Response) => {
      res.render('index');
  };
 
-
+// GetAllSongFromMysql
  export const lobbyGetHandler = async (req: Request, res: Response) => {
     try {
       const songs = await GetAllSongs();
@@ -17,17 +17,8 @@ import { AddFavorite,GetAllFavorites } from './DataBase/dao/favorite';
         res.status(500).send('Internal Server Error');
       }
   };
-  export const SongId1GetHandler = async (req: Request, res: Response) => {
-    try {
-      const songs = await GetId1Songs();
-      res.render('lobby', { songs }); 
-    } 
-    catch (error) {
-        console.error('Error fetching songs:', error);
-        res.status(500).send('Internal Server Error');
-      }
-  };
   
+  // Artist-Details
 export const getArtistDetailsHandler = async (req: Request, res: Response): Promise<void> => {
   const { artistName } = req.params;
   try {
@@ -44,6 +35,7 @@ export const getArtistDetailsHandler = async (req: Request, res: Response): Prom
       res.status(500).send('Internal server error');
   }
 };
+// Song-Details
 export const getSongDetailsHandler = async (req: Request, res: Response): Promise<void> => {
   const { songName } = req.params;
   try {
@@ -60,6 +52,7 @@ export const getSongDetailsHandler = async (req: Request, res: Response): Promis
       res.status(500).send('Internal server error');
   }
 };
+// For Fav
 export const addFavoriteHandler = async (req: Request, res: Response): Promise<void> => {
   const { songId } = req.body;
 
