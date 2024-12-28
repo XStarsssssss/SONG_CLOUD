@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #0f0f0f;
+    color: #e0e0e0;
+    overflow-x: hidden;
+
+  }
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color:#1a1a2e;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+ .fav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    background-color: #f3200d;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(153, 168, 189, 0.4);
+}
+
+.home-btn:hover, .fav-btn:hover {
+    background-color: #de280d;
+    box-shadow: 0 6px 18px rgba(242, 55, 14, 0.6);
+    transform: translateY(-3px);
+}
+
+
+.song-details-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 150px auto;
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+}
+
+.song-cover {
+    min-width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: #444;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-section {
+    flex: 2;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.song-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+  }
+  
+  .song-named {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f0a500;
+    margin: 0; 
+  }
+  
+  .artistd {
+    font-size: 15px;
+    color: #cccccc;
+    margin: 0; 
+  }
+  
+  
+  .song-details .extra-info {
+      font-size: 14px;
+      color: #962323;
+  }
+
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.lyrics-section {
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.lyrics-header h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 15px;
+    text-align: center;
+    color: #e3e2e2;
+}
+
+.lyrics-content {
+    max-height: 250px;
+    overflow-y: auto;
+    background: #000000;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #060505;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.lyrics-content p {
+    margin: 0 0 10px;
+}
+
+.lyrics-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.lyrics-content::-webkit-scrollbar-thumb {
+    background: rgb(249, 249, 249);
+    border-radius: 10px;
+}
+
+.lyrics-content::-webkit-scrollbar-thumb:hover {
+    background: red;
+}
+
+.lyrics-content::-webkit-scrollbar-track {
+    background: #040303;
+    border-radius: 10px;
+}
+
+
+.audio-section {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.favorite_heart-btn {
+  background: none;
+  border: none;
+  font-size: 38px;
+  color: #888888;       
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;   
+  float: right;
+ 
+  
+}
+
+.favorite_heart-btn:hover {
+  color: #ff0404;       
+  transform: scale(1.1);
+}
+.favorite_heart-btn.active {
+    color: #f20000;        
+  }
+  .music-detail {
+      width: 200px;
+      height: 90px;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left : 150%;
+    }
+    
+    .music-detail .bar {
+      width: 12px;
+      border-radius: 10px;
+      background: white;
+      animation: loader 1.5s ease-in-out infinite;
+      
+    }
+    
+    @keyframes loader {
+      0%, 100% {
+          height: 2px;
+      }
+    
+      50% {
+          height: 80px;
+      }
+    }
+    
+    

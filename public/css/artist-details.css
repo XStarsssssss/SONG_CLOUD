@@ -16,24 +16,24 @@
   .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Align items vertically */
-    padding: 15px 20px; /* Consistent padding */
-    background-color: #1a1a2e; /* Dark blue color */
+    align-items: center; 
+    padding: 15px 20px; 
+    background-color: #1a1a2e; 
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
-    animation: slideIn 0.5s ease-in-out; /* Adjust animation duration */
-    transition: background-color 0.3s ease; /* Smooth background transitions */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    animation: slideIn 0.5s ease-in-out; 
+    transition: background-color 0.3s ease; 
 }
 
 @keyframes slideIn {
     from {
-        transform: translateY(-100%); /* Start off-screen */
+        transform: translateY(-100%); 
     }
     to {
-        transform: translateY(0); /* Slide into place */
+        transform: translateY(0); 
     }
 }
 

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import {GetAllSongs, GetIdAllSongs } from './DataBase/dao/song';
-//import { Sai_Htee_Sai,Khin_Maung_Toe } from './DataBase/model/song';
+import {GetAllSongs, GetId1Songs } from './DataBase/dao/song';
+
 
  export const homepageGetHandler = (_: Request, res: Response) => {
      res.render('index');
@@ -10,9 +10,17 @@ import {GetAllSongs, GetIdAllSongs } from './DataBase/dao/song';
  export const lobbyGetHandler = async (req: Request, res: Response) => {
     try {
       const songs = await GetAllSongs();
-      const Idsongs = await GetIdAllSongs();
-      
-      res.render('lobby', { songs , Idsongs }); 
+      res.render('lobby', { songs }); 
+    } 
+    catch (error) {
+        console.error('Error fetching songs:', error);
+        res.status(500).send('Internal Server Error');
+      }
+  };
+  export const SongId1GetHandler = async (req: Request, res: Response) => {
+    try {
+      const songs = await GetId1Songs();
+      res.render('lobby', { songs }); 
     } 
     catch (error) {
         console.error('Error fetching songs:', error);
@@ -36,3 +44,22 @@ export const getArtistDetailsHandler = async (req: Request, res: Response): Prom
       res.status(500).send('Internal server error');
   }
 };
+export const getSongDetailsHandler = async (req: Request, res: Response): Promise<void> => {
+  const { songName } = req.params;
+  try {
+      const songs = await GetAllSongs(); 
+      const songstitle = songs.filter(song => song.song_name === songName);
+
+      if (songstitle.length > 0) {
+          res.render('song-details', { song : songName, songs : songstitle });
+      } else {
+          res.status(404).send(' not found');
+      }
+  } catch (error) {
+      console.error('Error fetching song details:', error);
+      res.status(500).send('Internal server error');
+  }
+};
+
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('partials/head') %>
+    </head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">Song Cloud</a>
+        <ul class="nav-links">
+      
+        </ul>
+         <a href="/lobby" class="fav-btn">
+            <span class="fav-icon"></span> Back
+          </a>
+    </nav>
+   
+
+    <div class="song-details-container">
+        <div class="image-section">
+            <%songs.forEach(song => { %>
+            <div class="song-cover-container">
+                <img src="../image/<%= song.cover_image %>" alt="Song Cover" class="song-cover">
+            </div>
+            <div class="song-details1">
+                <p class="song-named"><%= song.song_name %></p>
+                <p class="artistd"><%= song.artist %></p>
+            </div>
+        </div>
+        <div class="lyrics-section">
+    <div class="lyrics-header">
+        <h2></h2>
+    </div>
+    <div class="lyrics-content">
+        <p><%= song.lyrics %></p>
+    </div>
+</div>
+        <div class="audio-section">
+            <div class="audio_detail">
+                <audio controls>
+                  <source src="../audio/<%= song.music_audio %>" type="audio/mpeg">
+                  Your browser does not support the audio element. 
+              </audio>
+              <div class="favorite_heart-btn">
+                <button class="favorite_heart-btn" onclick="toggleFavorite(this)">
+                  &#x2661;
+              </div>
+        </div>
+        
+            </div>
+            <% }) %>
+        </div>   
+        
+    
+    
+
+
+        <script src="../JavaScript/script.js"></script>
+</body>
+</html>
