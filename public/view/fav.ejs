@@ -27,7 +27,7 @@
                         <img src="../image/<%= fav.cover_image %>" alt="<%= fav.song_name %>" class="favorite-cover">
                         <div class="favorite-details">
                             <h2><%= fav.song_name %></h2>
-                            <p>By <%= fav.artist %></p>
+                            <p> <%= fav.artist %></p>
                             <audio controls>
                                 <source src="../audio/<%= fav.music_audio %>" type="audio/mpeg">
                                 Your browser does not support the audio element.
@@ -40,6 +40,7 @@
             <p class="no-favorites">No favorites yet. Go add some songs to your favorites!</p>
         <% } %>
     </div>
+   
 
     <script src="/JavaScript/script.js"></script>
 </body>
