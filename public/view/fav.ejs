@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('partials/head') %>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">Song Cloud</a>
+        <ul class="nav-links">
+      
+        </ul>
+         <a href="/lobby" class="fav-btn">
+            <span class="fav-icon"></span> Back
+          </a>
+    </nav>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="favorites-container">
+        <h1>Your Favorites</h1>
+        <% if (favorites.length > 0) { %>
+            <div class="favorites-list">
+                <% favorites.forEach(fav => { %>
+                    <div class="favorite-item">
+                        <img src="../image/<%= fav.cover_image %>" alt="<%= fav.song_name %>" class="favorite-cover">
+                        <div class="favorite-details">
+                            <h2><%= fav.song_name %></h2>
+                            <p>By <%= fav.artist %></p>
+                            <audio controls>
+                                <source src="../audio/<%= fav.music_audio %>" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <p class="no-favorites">No favorites yet. Go add some songs to your favorites!</p>
+        <% } %>
+    </div>
+
+    <script src="/JavaScript/script.js"></script>
+</body>
+</html>

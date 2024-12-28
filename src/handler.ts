@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import {GetAllSongs, GetId1Songs } from './DataBase/dao/song';
-
+import { AddFavorite,GetAllFavorites } from './DataBase/dao/favorite';
 
  export const homepageGetHandler = (_: Request, res: Response) => {
      res.render('index');
@@ -60,6 +60,29 @@ export const getSongDetailsHandler = async (req: Request, res: Response): Promis
       res.status(500).send('Internal server error');
   }
 };
+export const addFavoriteHandler = async (req: Request, res: Response): Promise<void> => {
+  const { songId } = req.body;
 
+  if (!songId) {
+      res.status(400).json({ message: 'Song ID is required.' });
+      return;
+  }
 
+  try {
+      await AddFavorite(songId);
+      res.status(200).json({ message: 'Song added to favorites!' });
+  } catch (error) {
+      console.error('Error adding favorite:', error);
+      res.status(500).json({ message: 'Failed to add song to favorites.' });
+  }
+};
 
+export const getAllFavoritesHandler = async (_req: Request, res: Response): Promise<void> => {
+  try {
+      const favorites = await GetAllFavorites();
+      res.render('fav', { favorites }); 
+  } catch (error) {
+      console.error('Error fetching favorites:', error);
+      res.status(500).json({ message: 'Failed to fetch favorites.' });
+  }
+};

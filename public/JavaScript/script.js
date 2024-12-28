@@ -49,3 +49,22 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+function toggleFavorite(button) {
+  const songId = button.getAttribute('data-song-id');
+
+  fetch('/favorite', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ songId }),
+  })
+      .then(response => response.json())
+      .then(data => {
+          if (data.message) {
+              console.log(data.message);
+              button.style.color = 'red'; // Change button appearance
+          }
+      })
+      .catch(error => console.error('Error:', error));
+}
