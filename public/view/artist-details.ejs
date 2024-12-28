@@ -1,80 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include ('partials/head') %>
+    <%- include('partials/head') %>
 </head>
 <body>
     <nav class="navbar">
         <a href="/" class="logo">Song Cloud</a>
-        <ul class="nav-links">
-      
-        </ul>
+        <ul class="nav-links"></ul>
         <section class="search-bar">
             <input type="text" id="search" placeholder="Search Music...">
         </section>
-         <a href="/lobby" class="fav-btn">
+        <a href="/lobby" class="fav-btn">
             <span class="fav-icon"></span> Back
-          </a>
+        </a>
     </nav>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br>
     <!-- Artist Profile Section -->
     <div class="profile-container">
         <% songs.forEach(song => { %>
-        <div class="artist-header">
-            <div class="artist-img">
-                <img src="../image/<%= song.artist_image %>" alt="<%= song.song_name %>">
+            <div class="artist-header">
+                <div class="artist-img">
+                    <img src="../image/<%= song.artist_image %>" alt="<%= song.song_name %>">
+                </div>
+                <h1 class="artist-name"><%= song.artist %></h1>
+                <div class="music">
+                    <% for (let i = 0; i < 10; i++) { %>
+                        <div class="bar"></div>
+                    <% } %>
+                </div>
             </div>
-            <h1 class="artist-name"><%= artist %></h1>
-            <div class="music">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+            <hr>
+            <div class="about-section">
+                <h2>About <%= song.artist %></h2>
+                <p class="artist-description"><%=song.artist_about%></p>
             </div>
-        </div>
-        <hr>
-        <div class="about-section">
-            <h2>About <%= artist %></h2>
-            <p class="artist-description">gngn</p>
-        </div>
-    </div>
-    
-    <hr>
-    
-    <!-- Highlighted Songs Section -->
-   
-        <div class="highlight-section"> 
-            <div class="highlight">
-                <a href="/song-details/<%= song.id %>">
-                    <div class="image">
-                        <img src="../image/<%= song.coverImage %>" alt="<%= song.songName %>">
+            <hr><hr>
+            <!-- Highlighted Songs Section -->
+            <div class="highlight-section">
+                <div class="highlight">
+                    <a href="/song-details/<%= song.id %>">
+                        <div class="image">
+                            <img src="../image/<%= song.cover_image %>" alt="<%= song.song_name %>">
+                        </div>
+                    </a>
+                    <div class="song-details">
+                        <p class="song-name"><%= song.song_name %></p>
+                        <p class="artist"><%= song.artist %></p>
                     </div>
-                </a>
-                <div class="song-details">
-                    <p class="song-name"><%= song.songName %></p>
-                    <p class="artist"><%= artist %></p>
-                </div>
-                <div class="audio">
-                    <audio controls>
-                        <source src="../audio/<%= song.audioFile %>" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="heart">
-                    <button class="favorite_heart-btn" onclick="toggleFavorite(this)">
-                        &#x2661;
-                    </button>
+                    <div class="audio">
+                        <audio controls>
+                            <source src="../audio/<%= song.music_audio %>" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="heart">
+                        <button class="favorite_heart-btn" onclick="toggleFavorite(this)">
+                            &#x2661;
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <hr>
-    <% }) %>
-    
-    <script src="../javascript/script.js"></script>
+        <% }) %>
+    </div>
+    <script src="../JavaScript/script.js"></script>
 </body>
 </html>

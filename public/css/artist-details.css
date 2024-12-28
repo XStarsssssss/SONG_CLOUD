@@ -37,9 +37,9 @@
     }
 }
 
-/* Optional: Change background color on scroll */
+
 .navbar_lobby.scrolled {
-    background-color: #12122b; /* Slightly darker color */
+    background-color: #12122b; 
 }
 
   .home-btn,.fav-btn {
@@ -168,13 +168,13 @@ p{
     font-size: 18px;                     
     text-align: justify;                 
 }
-.highlight-Detail {
+.highlight {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px; 
 }
 
-.highlight-Detail .image-detail{
+.highlight .image{
   min-width: 100px;
   height: 100px;
   background-color: #333; 
@@ -183,44 +183,58 @@ p{
   color: #fff;
   font-size: 24px;
   border-radius: 10px;
+  margin: 30px;
+  
 }
-.highlight-Detail .image-detail:hover {
+.highlight .image:hover {
   background-color: #555;         
   transform: translateY(-5px);   
 }
 
-.song-details1 {
+.song-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: #ffffff;
 }
 
-.song-named {
+.song-name {
   font-size: 18px;
   font-weight: bold;
   color: #f0a500;
   margin: 0; 
 }
 
-.artistd {
+.artist {
   font-size: 14px;
   color: #cccccc;
   margin: 0; 
-  
 }
 
 
-.song-details1 .extra-info {
+.song-details .extra-info {
     font-size: 14px;
     color: #962323;
 }
-.image-detail img {
+
+
+.footer {
+  background-color: #23232a;
+  text-align: center;
+  padding: 15px 30px;
+  color: #e0e0e0;
+  font-size: 14px;
+  margin-top: 20px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image img {
   width: 150px;               
   height: 100px;              
   border-radius: 10px;        
   object-fit: cover;  
 }   
+
 audio::-webkit-media-controls-panel {
   background-color: #12f1ee;
 }
@@ -303,6 +317,18 @@ audio::-webkit-media-controls-panel {
   background: purple;
   animation-delay: 1s;
 }
+.favorite_heart-btn {
+  background: none;
+  border: none;
+  font-size: 38px;
+  color: #888888;       
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;   
+  float: right;
+ 
+  
+}
+
 .favorite_heart-btn:hover {
     color: #ff0404;       
     transform: scale(1.1);

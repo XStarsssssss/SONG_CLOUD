@@ -36,18 +36,14 @@
         <button class="scroll-btn right" onclick="scrollCarousel(1)">&#10095;</button>
     </div>
   </section>
-  
-
 <br>
 <hr>
-
-
-<section class="trend-section1">
+<section class="trend-section">
   <h2>Popular Song</h2>
   <div class="carousel1">
     <button class="scroll-btn left" onclick="scrollCarousel1(-1)">&#10094;</button>
     <% songs.forEach(song => { %>
-    <div class="image-container" id="imageContainer1">
+    <div class="image-container" id="imageContainer">
       <a href="/Nay_Yrr_Time_Mrr_Detail">
       <div  class="image"><img src="../image/<%= song.cover_image %>" alt="Image description" ></div>
       <h4><%= song.song_name %></h4>

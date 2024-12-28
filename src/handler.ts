@@ -11,7 +11,7 @@ import {GetAllSongs, GetIdAllSongs } from './DataBase/dao/song';
     try {
       const songs = await GetAllSongs();
       const Idsongs = await GetIdAllSongs();
-      console.log(Idsongs,songs);
+      
       res.render('lobby', { songs , Idsongs }); 
     } 
     catch (error) {
@@ -23,7 +23,7 @@ import {GetAllSongs, GetIdAllSongs } from './DataBase/dao/song';
 export const getArtistDetailsHandler = async (req: Request, res: Response): Promise<void> => {
   const { artistName } = req.params;
   try {
-      const songs = await GetAllSongs(); // Fetch all songs or a filtered list
+      const songs = await GetAllSongs(); 
       const artistSongs = songs.filter(song => song.artist === artistName);
 
       if (artistSongs.length > 0) {
