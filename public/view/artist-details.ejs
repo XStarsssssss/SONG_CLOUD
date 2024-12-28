@@ -15,7 +15,6 @@
         </a>
     </nav>
     <br><br><br><br>
-    <!-- Artist Profile Section -->
     <div class="profile-container">
         <% songs.forEach(song => { %>
             <div class="artist-header">
@@ -35,7 +34,6 @@
                 <p class="artist-description"><%=song.artist_about%></p>
             </div>
             <hr><hr>
-            <!-- Highlighted Songs Section -->
             <div class="highlight-section">
                 <div class="highlight">
                     <a id="songname-link" href="/song-details/<%= song.song_name %>">
